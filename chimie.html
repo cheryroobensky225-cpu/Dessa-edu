@@ -1,108 +1,242 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <link href="styles.css" rel="stylesheet">
-        <title>Haïti — Géographie</title>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <title>DessaEdu - Chimie</title>
+</head>
+<body style="background:#fafafa; font-family: 'Segoe UI', sans-serif;">
 
-        <!-- Navbar -->
-        <nav class="navbar navbar-dark bg-dark px-3">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <div class="drapeau"></div>
-                Haïti
-            </a>
-            <div>
-                <a class="btn btn-outline-light mr-2" href="index.html">Histoire</a>
-                <a class="btn btn-outline-light mr-2" href="culture.html">Culture</a>
-                <a class="btn btn-outline-light mr-2" href="geographie.html">Géographie</a>
-                <a class="btn btn-outline-light" href="cuisine.html">Cuisine</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-white border-bottom px-4 py-3">
+        <a class="navbar-brand fw-bold fs-4" href="index.html">DessaEdu</a>
+        <div class="d-flex gap-3">
+            <a href="index.html" class="text-dark text-decoration-none fw-semibold">Tout voir</a>
+            <a href="math.html" class="text-dark text-decoration-none fw-semibold">Maths</a>
+            <a href="chemistry.html" class="text-dark text-decoration-none fw-semibold">Chimie</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="border-bottom bg-white px-4 py-5">
+        <div class="container">
+            <h1 class="fw-bold mb-2">DessaEdu</h1>
+            <p class="text-muted mb-4">Apprends gratuitement, à ton rythme — programme NS1 Haïti</p>
+            <div class="d-flex gap-2 flex-wrap">
+                <button onclick="filtrer('tous')" class="btn btn-dark btn-sm">Tout voir</button>
+                <button onclick="filtrer('maths')" class="btn btn-outline-secondary btn-sm">Maths</button>
+                <button onclick="filtrer('physique')" class="btn btn-outline-secondary btn-sm">Physique</button>
+                <button onclick="filtrer('chimie')" class="btn btn-outline-secondary btn-sm">Chimie</button>
             </div>
-        </nav>
-
-        <!-- Header -->
-        <div class="jumbotron text-center text-white mb-0">
-            <h1 class="display-4">🗺️ Géographie d'Haïti</h1>
-            <p class="lead">Terre des hautes montagnes, des plages et des merveilles naturelles</p>
         </div>
+    </div>
 
-        <div class="container py-4">
+    <!-- Grille vidéos -->
+    <!-- SECTION CHIMIE — 15 vidéos Khan Academy (anglais) -->
+    <div class="container my-5">
+        <h5 class="fw-bold mb-4" id="titre-section">Chimie — NS1 (Khan Academy)</h5>
+        <div class="row" id="grille-videos">
 
-            <!-- Introduction -->
-            <h2>Introduction — Ayiti, Terre des Hautes Montagnes</h2>
-            <p>Haïti occupe le tiers occidental de l'île d'<strong>Hispaniola</strong>, qu'elle partage avec la République Dominicaine. Avec une superficie de <strong>27 750 km²</strong>, elle est l'un des pays les plus montagneux des Caraïbes. Son nom originel taïno, <strong data-bs-toggle="tooltip" data-bs-placement="top" title="Nom taïno signifiant terre des hautes montagnes">"Ayiti"</strong>, reflète parfaitement cette réalité géographique.</p>
-            <hr>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/Rd4a1X3B61w/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Introduction</p>
+                        <h6 class="fw-bold">Introduction to chemistry</h6>
+                        <a href="https://www.youtube.com/watch?v=Rd4a1X3B61w" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Localisation -->
-            <h2>📍Localisation</h2>
-            <ul>
-                <li><strong>Continent :</strong> Amérique, Caraïbes</li>
-                <li><strong>Coordonnées :</strong> 19°N, 72°O</li>
-                <li><strong>Superficie :</strong> 27 750 km²</li>
-                <li><strong>Population :</strong> environ 12 millions d'habitants</li>
-                <li><strong>Capitale :</strong> Port-au-Prince</li>
-                <li><strong>Frontière :</strong> République Dominicaine à l'est</li>
-                <li><strong>Mers :</strong> Mer des Caraïbes au sud, Océan Atlantique au nord</li>
-            </ul>
-            <hr>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/1xSQlwWGT8M/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Atomes</p>
+                        <h6 class="fw-bold">Introduction to the atom</h6>
+                        <a href="https://www.youtube.com/watch?v=1xSQlwWGT8M" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Montagnes -->
-            <h2>Les Montagnes — Le Cœur du Pays</h2>
-            <p>Haïti est dominée par plusieurs chaînes de montagnes qui traversent le pays d'est en ouest. Le point culminant est le <strong data-bs-toggle="tooltip" data-bs-placement="top" title="Point culminant d'Haïti à 2 680 mètres d'altitude">Pic la Selle</strong> à 2 680 mètres d'altitude. Ces montagnes ont joué un rôle crucial dans la Révolution haïtienne — elles ont servi de refuge et de forteresse naturelle aux combattants de la liberté.</p>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/zTUnjPALX_U/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Ions</p>
+                        <h6 class="fw-bold">Introduction to ions</h6>
+                        <a href="https://www.youtube.com/watch?v=zTUnjPALX_U" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <ul>
-                <li><strong>Massif du Nord</strong> — traverse le nord du pays</li>
-                <li><strong>Massif de la Selle</strong> — au sud-est, point culminant</li>
-                <li><strong>Massif de la Hotte</strong> — au sud-ouest, grande biodiversité</li>
-                <li><strong>Chaîne des Matheux</strong> — centre du pays</li>
-            </ul>
-            <hr>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/t_f8bB1kf6M/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Tableau périodique</p>
+                        <h6 class="fw-bold">The periodic table — classification of elements</h6>
+                        <a href="https://www.youtube.com/watch?v=t_f8bB1kf6M" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Villes -->
-            <h2>Les Grandes Villes</h2>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/akm5H2JsccI/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Électrons de valence</p>
+                        <h6 class="fw-bold">Counting valence electrons for main group elements</h6>
+                        <a href="https://www.youtube.com/watch?v=akm5H2JsccI" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Port-au-Prince — La Capitale</h3>
-            <p><strong>Port-au-Prince</strong> est la capitale et la plus grande ville d'Haïti. Centre politique, économique et culturel du pays, elle abrite environ 3 millions d'habitants dans son aire métropolitaine. Malgré les défis, c'est une ville vibrante, créative et résiliente.</p>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/kS5iU4v0QZk/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Liaisons</p>
+                        <h6 class="fw-bold">Covalent bonds</h6>
+                        <a href="https://www.youtube.com/watch?v=kS5iU4v0QZk" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Cap-Haïtien — La Cité Historique</h3>
-            <p><strong>Cap-Haïtien</strong> — appelée affectueusement <em>"Le Cap"</em> — est la deuxième ville d'Haïti et la capitale historique du nord. Ancienne capitale de la colonie française de Saint-Domingue, elle garde encore ses traces coloniales dans son architecture. C'est aussi la porte d'entrée vers la <strong>Citadelle Laferrière</strong> et le Palais Sans-Souci.</p>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/TUuABq95BBM/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Équations chimiques</p>
+                        <h6 class="fw-bold">Balancing chemical equations — introduction</h6>
+                        <a href="https://www.youtube.com/watch?v=TUuABq95BBM" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Jacmel — La Ville des Arts</h3>
-            <p><strong>Jacmel</strong> est une ville côtière du sud réputée pour son architecture coloniale préservée, son carnaval unique et sa scène artistique florissante. Elle est classée parmi les plus belles villes des Caraïbes.</p>
-            <hr>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/HbIdp5DURJA/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Équations chimiques</p>
+                        <h6 class="fw-bold">Visually understanding balancing chemical equations</h6>
+                        <a href="https://www.youtube.com/watch?v=HbIdp5DURJA" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Merveilles -->
-            <h2>Les Merveilles Naturelles et Historiques</h2>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/_Su9Fij7TMQ/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Stœchiométrie</p>
+                        <h6 class="fw-bold">The mole and Avogadro's number</h6>
+                        <a href="https://www.youtube.com/watch?v=_Su9Fij7TMQ" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <h3>La Citadelle Laferrière</h3>
-            <p>La <strong>Citadelle Laferrière</strong> est la plus grande forteresse de l'hémisphère occidental. Construite par Henri Christophe au début du XIXe siècle pour défendre Haïti contre une éventuelle invasion française, elle domine les montagnes du nord à 910 mètres d'altitude. Elle est classée au <strong>Patrimoine Mondial de l'UNESCO</strong>.</p>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/DvYs1HILq1g/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Oxydoréduction</p>
+                        <h6 class="fw-bold">Oxidation and reduction — introduction</h6>
+                        <a href="https://www.youtube.com/watch?v=DvYs1HILq1g" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Le Palais Sans-Souci</h3>
-            <p>Le <strong>Palais Sans-Souci</strong>, également classé à l'UNESCO, était la résidence royale du roi Henri Christophe. Surnommé le "Versailles des Caraïbes", il témoigne de la grandeur et de l'ambition de l'Haïti post-indépendance.</p>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/JH4tn5dyXyE/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Oxydoréduction</p>
+                        <h6 class="fw-bold">Simple redox reactions</h6>
+                        <a href="https://www.youtube.com/watch?v=JH4tn5dyXyE" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Les Plages</h3>
-            <p>Haïti possède certaines des plus belles plages des Caraïbes, souvent méconnues du monde. <strong>Labadee</strong>, <strong>Cormier</strong>, <strong>Moulin sur Mer</strong> et les îles de la <strong>Gonâve</strong> et de la <strong>Tortue</strong> offrent des eaux cristallines et des paysages à couper le souffle.</p>
-            <hr>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/ja7p_tzTTEA/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Acides et bases</p>
+                        <h6 class="fw-bold">Intro to acids and bases</h6>
+                        <a href="https://www.youtube.com/watch?v=ja7p_tzTTEA" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Climat -->
-            <h2> Le Climat</h2>
-            <p>Haïti bénéficie d'un climat <strong>tropical</strong> avec deux saisons des pluies — avril à juin et août à octobre. Les températures restent chaudes toute l'année, entre <strong>25°C et 35°C</strong> sur les côtes. Les montagnes offrent un climat plus frais et agréable.</p>
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/gjKmQ501sAg/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Acides et bases</p>
+                        <h6 class="fw-bold">Introduction to pH and the pH scale</h6>
+                        <a href="https://www.youtube.com/watch?v=gjKmQ501sAg" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/qObcdZj8YTM/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Gaz</p>
+                        <h6 class="fw-bold">The ideal gas law (PV = nRT)</h6>
+                        <a href="https://www.youtube.com/watch?v=qObcdZj8YTM" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 video-card" data-matiere="chimie">
+                <div class="card border h-100" style="border-radius:8px;">
+                    <img src="https://img.youtube.com/vi/L-Uhyjt8t10/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                    <div class="card-body">
+                        <p class="text-muted small mb-1">Chimie • Solutions</p>
+                        <h6 class="fw-bold">Molarity</h6>
+                        <a href="https://www.youtube.com/watch?v=L-Uhyjt8t10" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
+    </div>
 
-        <!-- Footer -->
-        <footer class="text-center py-3">
-            <p>🇭🇹 Haïti — Terre de Liberté, de Culture et de Saveurs</p>
-        </footer>
+    <!-- Footer -->
+    <footer class="border-top bg-white text-center py-4">
+        <p class="text-muted small mb-0">DessaEdu &copy; 2026 — Inspiré par Jean-Jacques Dessalines</p>
+    </footer>
 
-        <script>
-            var tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-            tooltips.forEach(function(el) {
-                new bootstrap.Tooltip(el);
+    <script>
+        function filtrer(matiere) {
+            const cards = document.querySelectorAll('.video-card');
+            const titre = document.getElementById('titre-section');
+            const noms = {
+                'tous': 'Toutes les leçons',
+                'maths': 'Mathématiques',
+                'physique': 'Physique',
+                'chimie': 'Chimie',
+                'francais': 'Français',
+                'histoire': 'Histoire'
+            };
+            if (titre) {
+                titre.textContent = noms[matiere] || 'Toutes les leçons';
+            }
+            cards.forEach(function(card) {
+                if (matiere === 'tous' || card.dataset.matiere === matiere) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
             });
-        </script>
+        }
+    </script>
 
-    </body>
+</body>
 </html>
