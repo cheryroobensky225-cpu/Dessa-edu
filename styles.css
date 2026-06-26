@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
 }
-
+/* /* from claude code */
 body {
     background: #3a869e;
     font-family: 'Segoe UI', system-ui, sans-serif;
@@ -45,7 +45,7 @@ body {
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
 }
-
+* /* from claude code */
 .navbar a.text-dark:hover {
     color: #1a1a1a !important;
     border-bottom-color: #f5c518;
@@ -124,7 +124,7 @@ body {
     transition: transform 0.18s, box-shadow 0.18s;
     overflow: hidden;
 }
-
+* /* from claude code */
 .video-card .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
@@ -171,7 +171,7 @@ body {
     letter-spacing: 0.3px;
     transition: background 0.18s, opacity 0.18s;
 }
-
+* /* from claude code */
 .video-card .btn-dark:hover {
     background: #333 !important;
     opacity: 0.92;
