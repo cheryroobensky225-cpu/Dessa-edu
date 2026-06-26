@@ -1,126 +1,298 @@
+
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <link href="styles.css" rel="stylesheet">
-        <title>DessaEdu</title>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <title>DessaEdu</title>
+</head>
+<body style="background:#fafafa; font-family: 'Segoe UI', sans-serif;">
 
-        <!-- Navbar -->
-        <nav class="navbar navbar-dark bg-dark px-3">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <img src="drapeau.png" width="100" height="50" alt="Drapeau Haïti">
-                DessaEdu
-            </a>
-            <div>
-                <a class="btn btn-outline-light me-2" href="#maths">Maths</a>
-                <a class="btn btn-outline-light me-2" href="#physique">Physique</a>
-                <a class="btn btn-outline-light me-2" href="#chimie">Chimie</a>
-                <a class="btn btn-outline-light me-2" href="#francais">Français</a>
-                <a class="btn btn-outline-light" href="#histoire">Histoire</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-white border-bottom px-4 py-3">
+        <a class="navbar-brand fw-bold fs-4" href="#">DessaEdu</a>
+        <div class="d-flex gap-3">
+            <a href="math.html" onclick="filtrer('maths')" class="text-dark text-decoration-none fw-semibold">Maths</a>
+            <a href="physics.html" onclick="filtrer('physique')" class="text-dark text-decoration-none fw-semibold">Physique</a>
+            <a href="chemistry.html" onclick="filtrer('chimie')" class="text-dark text-decoration-none fw-semibold">Chimie</a>
+           
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="border-bottom bg-white px-4 py-5">
+        <div class="container">
+            <h1 class="fw-bold mb-2">DessaEdu</h1>
+            <p class="text-muted mb-4">Apprends gratuitement, à ton rythme — programme NS1 Haïti</p>
+            <div class="d-flex gap-2 flex-wrap">
+                <button onclick="filtrer('tous')" class="btn btn-dark btn-sm">Tout voir</button>
+                <button onclick="filtrer('maths')" class="btn btn-outline-secondary btn-sm">Maths</button>
+                <button onclick="filtrer('physique')" class="btn btn-outline-secondary btn-sm">Physique</button>
+                <button onclick="filtrer('chimie')" class="btn btn-outline-secondary btn-sm">Chimie</button>
+               
             </div>
-        </nav>
+        </div>
+    </div>
 
-        <!-- Hero -->
-        <div class="container mt-4">
-            <h1 class="display-1">Dessa Edu </h1>
-            <p class="lead">Math NSI</p>
-            <hr>
+    <!-- Grille vidéos -->
+   <!-- SECTION MATHS — 20 vidéos Khan Academy -->
+<div class="container my-5">
+    <h5 class="fw-bold mb-4">Mathématiques — NS1 (Khan Academy)</h5>
+    <div class="row" id="grille-videos">
 
-            <!-- Boutons filtres matières -->
-            <div class="mb-4">
-                <button class="btn btn-dark me-2 mb-2" onclick="filtrer('tous')">Tout voir</button>
-                <button class="btn btn-outline-dark me-2 mb-2" onclick="filtrer('maths')">Maths</button>
-                <button class="btn btn-outline-dark me-2 mb-2" onclick="filtrer('physique')">Physique</button>
-                <button class="btn btn-outline-dark me-2 mb-2" onclick="filtrer('chimie')">Chimie</button>
-                <button class="btn btn-outline-dark me-2 mb-2" onclick="filtrer('francais')">Français</button>
-                <button class="btn btn-outline-dark me-2 mb-2" onclick="filtrer('histoire')">Histoire</button>
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/52ZlXsFJULI/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Fractions</p>
+                    <h6 class="fw-bold">Addition de fractions</h6>
+                    <a href="https://www.youtube.com/watch?v=52ZlXsFJULI" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
             </div>
-
-            <hr>
-
-            <!-- Grille de vidéos -->
-            <div class="row" id="grille-videos">
-
-                <!-- Exemple vidéo Maths -->
-                <div class="col-md-4 mb-4 video-card" data-matiere="maths">
-                    <div class="card border-dark h-100">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_ICI"
-                                    title="Leçon Maths"
-                                    allowfullscreen></iframe>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Les fractions</h5>
-                            <p class="card-text">Introduction aux fractions — NS1</p>
-                            <span class="badge bg-dark">Maths</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Exemple vidéo Physique -->
-                <div class="col-md-4 mb-4 video-card" data-matiere="physique">
-                    <div class="card border-dark h-100">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_ICI"
-                                    title="Leçon Physique"
-                                    allowfullscreen></iframe>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">lolo</h5>
-                            <p class="card-text"> lLl</p>
-                            <span class="badge bg-dark">Physique</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4 mb-4 video-card" data-matiere="math">
-                    <div class="card border-dark h-100">
-                        <div class="ratio ratio-16x9">
-                           <iframe
-                            src="https://www.youtube-nocookie.com/embed/52ZlXsFJULI"
-                            width="100%" height="215"
-                            allowfullscreen
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                           </iframe>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Adding and subtracting fraction</h5>                                
-                            <p class="card-text">Structure de l'atome — NS2</p>
-                            <span class="badge bg-dark">Maths</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- fin grille -->
-
-            <hr>
-
-            <!-- Footer -->
-            <footer class="text-center text-muted mb-4">
-                <p>DessaEdu &copy; 2025 — Inspiré par Jean-Jacques Dessalines</p>
-            </footer>
-
         </div>
 
-        <!-- Script filtrage -->
-        <script>
-            function filtrer(matiere) {
-                const cards = document.querySelectorAll('.video-card');
-                cards.forEach(function(card) {
-                    if (matiere === 'tous' || card.dataset.matiere === matiere) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-        </script>
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/U2ovEuEUxXQ/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Fractions</p>
+                    <h6 class="fw-bold">Fractions équivalentes</h6>
+                    <a href="https://www.youtube.com/watch?v=U2ovEuEUxXQ" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
 
-    </body>
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/CTKMK1ZGLuk/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Fractions</p>
+                    <h6 class="fw-bold">Multiplication de fractions</h6>
+                    <a href="https://www.youtube.com/watch?v=CTKMK1ZGLuk" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/f3ySpxX9oeM/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Fractions</p>
+                    <h6 class="fw-bold">Division de fractions</h6>
+                    <a href="https://www.youtube.com/watch?v=f3ySpxX9oeM" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/zR3gaFobut4/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Fractions</p>
+                    <h6 class="fw-bold">Soustraction fractions mixtes</h6>
+                    <a href="https://www.youtube.com/watch?v=zR3gaFobut4" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/FaDtge_vkbg/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Pourcentages</p>
+                    <h6 class="fw-bold">Trouver un pourcentage</h6>
+                    <a href="https://www.youtube.com/watch?v=FaDtge_vkbg" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/_SpE4hQ8D_o/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Pourcentages</p>
+                    <h6 class="fw-bold">Pourcentages et équations</h6>
+                    <a href="https://www.youtube.com/watch?v=_SpE4hQ8D_o" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/w7NhLkQynS8/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Algèbre</p>
+                    <h6 class="fw-bold">Introduction à l'algèbre</h6>
+                    <a href="https://www.youtube.com/watch?v=w7NhLkQynS8" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/X94hkafN2sg/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Algèbre</p>
+                    <h6 class="fw-bold">Variables et expressions</h6>
+                    <a href="https://www.youtube.com/watch?v=X94hkafN2sg" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/_BFaxpf35sY/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Algèbre</p>
+                    <h6 class="fw-bold">Expressions avec fractions</h6>
+                    <a href="https://www.youtube.com/watch?v=_BFaxpf35sY" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/s9t7rNhaBp8/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Géométrie</p>
+                    <h6 class="fw-bold">Théorème de Pythagore</h6>
+                    <a href="https://www.youtube.com/watch?v=s9t7rNhaBp8" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/AA6RfgP-AHU/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Géométrie</p>
+                    <h6 class="fw-bold">Pythagore — exemple pratique</h6>
+                    <a href="https://www.youtube.com/watch?v=AA6RfgP-AHU" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/jVvpQAIrJ-o/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Géométrie</p>
+                    <h6 class="fw-bold">Pythagore — problème concret</h6>
+                    <a href="https://www.youtube.com/watch?v=jVvpQAIrJ-o" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/5t8bnnLNUvg/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Géométrie</p>
+                    <h6 class="fw-bold">Pythagore — exercice</h6>
+                    <a href="https://www.youtube.com/watch?v=5t8bnnLNUvg" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/FICRd7Lp67s/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Probabilités</p>
+                    <h6 class="fw-bold">Introduction aux probabilités</h6>
+                    <a href="https://www.youtube.com/watch?v=FICRd7Lp67s" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/obZzOq_wSCg/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Statistiques</p>
+                    <h6 class="fw-bold">Moyenne, médiane, mode</h6>
+                    <a href="https://www.youtube.com/watch?v=obZzOq_wSCg" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/GrynkZB3E7M/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Statistiques</p>
+                    <h6 class="fw-bold">Lire un graphique</h6>
+                    <a href="https://www.youtube.com/watch?v=GrynkZB3E7M" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/NSSoMafbBqQ/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Nombres</p>
+                    <h6 class="fw-bold">Nombres relatifs</h6>
+                    <a href="https://www.youtube.com/watch?v=NSSoMafbBqQ" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/kHnlA9izOXk/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Nombres</p>
+                    <h6 class="fw-bold">Puissances et exposants</h6>
+                    <a href="https://www.youtube.com/watch?v=kHnlA9izOXk" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 video-card" data-matiere="maths">
+            <div class="card border h-100" style="border-radius:8px;">
+                <img src="https://img.youtube.com/vi/cw4tfYwOPlc/hqdefault.jpg" class="card-img-top" style="border-radius:8px 8px 0 0;">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Maths • Nombres</p>
+                    <h6 class="fw-bold">Racines carrées</h6>
+                    <a href="https://www.youtube.com/watch?v=cw4tfYwOPlc" target="_blank" class="btn btn-dark btn-sm mt-2 w-100">Regarder</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="border-top bg-white text-center py-4">
+        <p class="text-muted small mb-0">DessaEdu &copy; 2026 — Inspiré par Jean-Jacques Dessalines</p>
+    </footer>
+
+    <script>
+        function filtrer(matiere) {
+            const cards = document.querySelectorAll('.video-card');
+            const titre = document.getElementById('titre-section');
+            const noms = {
+                'tous': 'Toutes les leçons',
+                'maths': 'Mathématiques',
+                'physique': 'Physique',
+                'chimie': 'Chimie',
+                'francais': 'Français',
+                'histoire': 'Histoire'
+            };
+            titre.textContent = noms[matiere] || 'Toutes les leçons';
+            cards.forEach(function(card) {
+                if (matiere === 'tous' || card.dataset.matiere === matiere) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
 </html>
-
